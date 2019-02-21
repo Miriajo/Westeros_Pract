@@ -29,6 +29,10 @@ extension Season {
     var count: Int {
         return _episodes.count
     }
+        
+    var sortedEpisodes: [Episode] {
+        return _episodes.sorted()
+    }
     
    func add(episode: Episode) {
         guard episode.season == self else { return }
@@ -36,10 +40,7 @@ extension Season {
     }
     
     // Función variádica
-    func add(episodes: Episode...) {
-        //        for person in persons {
-        //            add(person: person)
-        //        }
+    func add(episodes: [Episode]) {
         episodes.forEach { add(episode: $0) }
     }
 }
@@ -52,6 +53,12 @@ extension Season {
     
     var proxyForComparison: Date {
         return airedDate
+    }
+}
+
+extension Season: CustomStringConvertible {
+    var description: String {
+        return "Season \(season)"
     }
 }
 
@@ -69,6 +76,10 @@ extension Season: Hashable {
 
 extension Season: Comparable {
     static func < (lhs: Season, rhs: Season) -> Bool {
-        return lhs.proxyForComparison < rhs.proxyForComparison
+        let d1: Date = lhs.proxyForComparison
+        let d2: Date = rhs.proxyForComparison
+        
+        return d1 < d2
     }
 }
+

@@ -18,12 +18,19 @@ final class Episode {
     let airedDate: Date
     
     // MARK: Initialization
+    init(episode: Int, title: String, airedDate: Date) {
+        self.episode = episode
+        self.title = title
+        self.airedDate = airedDate
+    }
+    
     init(episode: Int, title: String, airedDate: Date, season: Season) {
         self.episode = episode
         self.title = title
         self.airedDate = airedDate
         self.season = season
     }
+    
 }
 
 extension Episode {
@@ -31,8 +38,14 @@ extension Episode {
         return "\(season!.season) \(episode) \(title) \(airedDate)"
     }
     
-    var proxyForComparison: String {
-        return title
+    var proxyForComparison: Date {
+        return airedDate
+    }
+}
+
+extension Episode: CustomStringConvertible {
+    var description: String {
+        return "Episode \(episode)"
     }
 }
 

@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Crearnos los modelos
         let houses = Repository.local.houses
+        let seasons = Repository.local.seasons
         
         // Creamos los controladores (el que irá en master, y el que irá en el detail)
         let houseListViewController = HouseListViewController(model: houses)
