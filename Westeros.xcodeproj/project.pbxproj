@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		4A1E8037221CD4F000E90C27 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E8036221CD4F000E90C27 /* Season.swift */; };
 		4A1E8039221CD84C00E90C27 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E8038221CD84C00E90C27 /* Episode.swift */; };
-		4A1E803B221CDFF400E90C27 /* SeasonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E803A221CDFF400E90C27 /* SeasonTests.swift */; };
+		4AA382BC221E9A7200188418 /* got.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AA382BB221E9A7200188418 /* got.json */; };
+		4AA382BE221EA37F00188418 /* SeasonsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA382BD221EA37F00188418 /* SeasonsData.swift */; };
+		4AA382C2221EA6FE00188418 /* SeasonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA382C1221EA6FE00188418 /* SeasonTest.swift */; };
+		4AA382C4221EACA900188418 /* EpisodeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA382C3221EACA900188418 /* EpisodeTest.swift */; };
 		AC2587D02213788F00343864 /* HouseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2587CE2213788F00343864 /* HouseCollectionViewController.swift */; };
 		AC2587D12213788F00343864 /* HouseCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC2587CF2213788F00343864 /* HouseCollectionViewController.xib */; };
 		AC2587D422137B1700343864 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2587D222137B1700343864 /* CollectionViewCell.swift */; };
@@ -52,7 +55,10 @@
 /* Begin PBXFileReference section */
 		4A1E8036221CD4F000E90C27 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		4A1E8038221CD84C00E90C27 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
-		4A1E803A221CDFF400E90C27 /* SeasonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonTests.swift; sourceTree = "<group>"; };
+		4AA382BB221E9A7200188418 /* got.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = got.json; sourceTree = "<group>"; };
+		4AA382BD221EA37F00188418 /* SeasonsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonsData.swift; sourceTree = "<group>"; };
+		4AA382C1221EA6FE00188418 /* SeasonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonTest.swift; sourceTree = "<group>"; };
+		4AA382C3221EACA900188418 /* EpisodeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTest.swift; sourceTree = "<group>"; };
 		AC2587CE2213788F00343864 /* HouseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseCollectionViewController.swift; sourceTree = "<group>"; };
 		AC2587CF2213788F00343864 /* HouseCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseCollectionViewController.xib; sourceTree = "<group>"; };
 		AC2587D222137B1700343864 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 		AC61626E2208F2D300EC1FD1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4AA382BB221E9A7200188418 /* got.json */,
 				AC6162682208F2BB00EC1FD1 /* codeIsComing.png */,
 				AC61626A2208F2BB00EC1FD1 /* lannister.jpg */,
 				AC6162692208F2BB00EC1FD1 /* targaryenSmall.jpg */,
@@ -138,6 +145,7 @@
 			children = (
 				AC6162702208FF0500EC1FD1 /* UIViewController+Navigation.swift */,
 				AC2B75FA2212226B00014F4B /* Constants.swift */,
+				4AA382BD221EA37F00188418 /* SeasonsData.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -190,7 +198,8 @@
 				AC6E682B22039C3900EB0430 /* HouseTests.swift */,
 				AC6E68322203A8A500EB0430 /* PersonTests.swift */,
 				AC616272220B703B00EC1FD1 /* RepositoryTests.swift */,
-				4A1E803A221CDFF400E90C27 /* SeasonTests.swift */,
+				4AA382C1221EA6FE00188418 /* SeasonTest.swift */,
+				4AA382C3221EACA900188418 /* EpisodeTest.swift */,
 			);
 			path = WesterosTests;
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 			files = (
 				AC61626D2208F2BC00EC1FD1 /* lannister.jpg in Resources */,
 				AC61627C220B9F9C00EC1FD1 /* WikiViewController.xib in Resources */,
+				4AA382BC221E9A7200188418 /* got.json in Resources */,
 				AC2587D522137B1700343864 /* CollectionViewCell.xib in Resources */,
 				AC6E68162203929F00EB0430 /* LaunchScreen.storyboard in Resources */,
 				AC95EB82220CCDB80021E69D /* HouseListViewController.xib in Resources */,
@@ -320,6 +330,7 @@
 			files = (
 				AC616278220B714100EC1FD1 /* Repository.swift in Sources */,
 				AC2B75FB2212226B00014F4B /* Constants.swift in Sources */,
+				4AA382BE221EA37F00188418 /* SeasonsData.swift in Sources */,
 				AC6162712208FF0500EC1FD1 /* UIViewController+Navigation.swift in Sources */,
 				AC6162662208EA4D00EC1FD1 /* HouseDetailViewController.swift in Sources */,
 				AC6E68312203A6DA00EB0430 /* Sigil.swift in Sources */,
@@ -340,7 +351,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A1E803B221CDFF400E90C27 /* SeasonTests.swift in Sources */,
+				4AA382C2221EA6FE00188418 /* SeasonTest.swift in Sources */,
+				4AA382C4221EACA900188418 /* EpisodeTest.swift in Sources */,
 				AC6E682C22039C3900EB0430 /* HouseTests.swift in Sources */,
 				AC6E68332203A8A500EB0430 /* PersonTests.swift in Sources */,
 				AC616273220B703B00EC1FD1 /* RepositoryTests.swift in Sources */,

@@ -45,7 +45,7 @@ extension Person {
 }
 
 // Si dos objetos tienen el mismo hash, significa que tienen que ser iguales
-// A la inversa no es necesariamente cierta: 2 objecos puedes ser iguales y no tener el mismo hash
+// A la inversa no es necesariamente cierta: 2 objetos puedes ser iguales y no tener el mismo hash
 extension Person: Hashable { // Identidad
     // Con proxy, le pasamos el marrón de calcular el hash u otra cosa a otro objeto
     var hashValue: Int {

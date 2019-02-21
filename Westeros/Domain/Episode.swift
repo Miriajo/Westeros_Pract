@@ -12,14 +12,47 @@ import Foundation
 final class Episode {
     
     // MARK: Properties
-    let episodeNum: Int
+    weak var season: Season?
+    let episode: Int
     let title: String
     let airedDate: Date
     
     // MARK: Initialization
-    init(episodeNum: Int, title: String, airedDate: Date) {
-        self.episodeNum = episodeNum
+    init(episode: Int, title: String, airedDate: Date, season: Season) {
+        self.episode = episode
         self.title = title
         self.airedDate = airedDate
+        self.season = season
+    }
+}
+
+extension Episode {
+    var proxyForEquality: String {
+        return "\(season!.season) \(episode) \(title) \(airedDate)"
+    }
+    
+    var proxyForComparison: String {
+        return title
+    }
+}
+
+// Si dos objetos tienen el mismo hash, significa que tienen que ser iguales
+// A la inversa no es necesariamente cierta: 2 objecos puedes ser iguales y no tener el mismo hash
+extension Episode: Hashable { // Identidad
+    // Con proxy, le pasamos el marrón de calcular el hash u otra cosa a otro objeto
+    var hashValue: Int {
+        return proxyForEquality.hashValue
+    }
+}
+
+extension Episode: Equatable {
+    static func == (lhs: Episode, rhs: Episode) -> Bool {
+        return lhs.proxyForEquality == rhs.proxyForEquality
+    }
+}
+
+extension Episode: Comparable {
+    static func < (lhs: Episode, rhs: Episode) -> Bool {
+        return lhs.proxyForComparison < rhs.proxyForComparison
     }
 }

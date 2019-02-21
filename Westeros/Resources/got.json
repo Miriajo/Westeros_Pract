@@ -1,110 +1,112 @@
-
 {
+    "Seasons": [
+    {
     "season": "1",
-    "airedDate": "17 de abril de 2011",
+    "airedDate": "17-Abril-2011",
     "episodes": [ 
-        {"episode": "1", "title": "Winter Is Coming", "airedDate": "17 de abril de 2011"},
-        {"episode": "2", "title": "The Kingsroad", "airedDate": "24 de abril de 2011"},
-        {"episode": "3", "title": "Lord Snow", "airedDate": "1 de mayo de 2011"},
-        {"episode": "4", "title": "Cripples", "airedDate": "8 de mayo de 2011"},
-        {"episode": "5", "title": "The Wolf and the Lion", "airedDate": "15 de mayo de 2011"},
-        {"episode": "6", "title": "A Golden Crown", "airedDate": "22 de mayo de 2011"},
-        {"episode": "7", "title": "You Win or You Die", "airedDate": "29 de mayo de 2011"},
-        {"episode": "8", "title": "The Pointy End", "airedDate": "5 de junio de 2011"},
-        {"episode": "9", "title": "Baelor", "airedDate": "12 de junio de 2011"},
-        {"episode": "10", "title": "Fire and Blood", "airedDate": "19 de junio de 2011"}
-    ]
-},
-{
+        {"episode": "1", "title": "Winter Is Coming", "airedDate": "17-Abril-2011"},
+        {"episode": "2", "title": "The Kingsroad", "airedDate": "24-Abril-2011"},
+        {"episode": "3", "title": "Lord Snow", "airedDate": "1-Mayo-2011"},
+        {"episode": "4", "title": "Cripples", "airedDate": "8-Mayo-2011"},
+        {"episode": "5", "title": "The Wolf and the Lion", "airedDate": "15-Mayo-2011"},
+        {"episode": "6", "title": "A Golden Crown", "airedDate": "22-Mayo-2011"},
+        {"episode": "7", "title": "You Win or You Die", "airedDate": "29-Mayo-2011"},
+        {"episode": "8", "title": "The Pointy End", "airedDate": "5-Junio-2011"},
+        {"episode": "9", "title": "Baelor", "airedDate": "12-Junio-2011"},
+        {"episode": "10", "title": "Fire and Blood", "airedDate": "19-Junio-2011"}
+        ]
+    },
+    {
     "season": "2",
-    "airedDate": "1 de abril de 2012",
+    "airedDate": "1-Abril-2012",
     "episodes": [ 
-        {"episode": "1", "title": "The North Remembers", "airedDate": "1 de abril de 2012"},
-        {"episode": "2", "title": "The Night Lands", "airedDate": "8 de abril de 2012"},
-        {"episode": "3", "title": "What Is Dead May Never Die", "airedDate": "15 de abril de 2012"},
-        {"episode": "4", "title": "Garden of Bones", "airedDate": "22 de abril de 2012"},
-        {"episode": "5", "title": "The Ghost of Harrenhal", "airedDate": "29 de abril de 2012"},
-        {"episode": "6", "title": "The Old Gods and the New", "airedDate": "6 de mayo de 2012"},
-        {"episode": "7", "title": "A Man Without Honor", "airedDate": "13 de mayo de 2012"},
-        {"episode": "8", "title": "The Prince of Winterfell", "airedDate": "20 de mayo de 2012"},
-        {"episode": "9", "title": "Blackwater", "airedDate": "27 de mayo de 2012"},
-        {"episode": "10", "title": "Valar Morghulis", "airedDate": "3 de junio de 2012"}
-    ]
-},
-{
+        {"episode": "1", "title": "The North Remembers", "airedDate": "1-Abril-2012"},
+        {"episode": "2", "title": "The Night Lands", "airedDate": "8-Abril-2012"},
+        {"episode": "3", "title": "What Is Dead May Never Die", "airedDate": "15-Abril-2012"},
+        {"episode": "4", "title": "Garden of Bones", "airedDate": "22-Abril-2012"},
+        {"episode": "5", "title": "The Ghost of Harrenhal", "airedDate": "29-Abril-2012"},
+        {"episode": "6", "title": "The Old Gods and the New", "airedDate": "6-Mayo-2012"},
+        {"episode": "7", "title": "A Man Without Honor", "airedDate": "13-Mayo-2012"},
+        {"episode": "8", "title": "The Prince of Winterfell", "airedDate": "20-Mayo-2012"},
+        {"episode": "9", "title": "Blackwater", "airedDate": "27-Mayo-2012"},
+        {"episode": "10", "title": "Valar Morghulis", "airedDate": "3-Junio-2012"}
+        ]
+    },
+    {
     "season": "3",
-    "airedDate": "31 de marzo de 2013",
+    "airedDate": "31-Marzo-2013",
     "episodes": [ 
-        {"episode": "1", "title": "Valar Dohaeris", "airedDate": "31 de marzo de 2013"},
-        {"episode": "2", "title": "Dark Wings", "airedDate": "7 de abril de 2013"},
-        {"episode": "3", "title": "Walk of Punishment", "airedDate": "14 de abril de 2013"},
-        {"episode": "4", "title": "And Now His Watch is Ended", "airedDate": "21 de abril de 2013"},
-        {"episode": "5", "title": "Kissed by Fire", "airedDate": "28 de abril de 2013"},
-        {"episode": "6", "title": "The Climb", "airedDate": "5 de mayo de 2013"},
-        {"episode": "7", "title": "The Bear and the Maiden Fair", "airedDate": "12 de mayo de 2013"},
-        {"episode": "8", "title": "Second Sons", "airedDate": "19 de mayo de 2013"},
-        {"episode": "9", "title": "The Rains of Castamere", "airedDate": "2 de junio de 2013"},
-        {"episode": "10", "title": "Mhysa", "airedDate": "9 de junio de 2013"}
-    ]
-},    
-{
+        {"episode": "1", "title": "Valar Dohaeris", "airedDate": "31-Marzo-2013"},
+        {"episode": "2", "title": "Dark Wings", "airedDate": "7-Abril-2013"},
+        {"episode": "3", "title": "Walk of Punishment", "airedDate": "14-Abril-2013"},
+        {"episode": "4", "title": "And Now His Watch is Ended", "airedDate": "21-Abril-2013"},
+        {"episode": "5", "title": "Kissed by Fire", "airedDate": "28-Abril-2013"},
+        {"episode": "6", "title": "The Climb", "airedDate": "5-Mayo-2013"},
+        {"episode": "7", "title": "The Bear and the Maiden Fair", "airedDate": "12-Mayo-2013"},
+        {"episode": "8", "title": "Second Sons", "airedDate": "19-Mayo-2013"},
+        {"episode": "9", "title": "The Rains of Castamere", "airedDate": "2-Junio-2013"},
+        {"episode": "10", "title": "Mhysa", "airedDate": "9-Junio-2013"}
+        ]
+    },
+    {
     "season": "4",
-    "airedDate": "6 de abril de 2014",
+    "airedDate": "6-Abril-2014",
     "episodes": [ 
-        {"episode": "1", "title": "Two Swords", "airedDate": "6 de abril de 2014"},
-        {"episode": "2", "title": "The Lion and the Rose", "airedDate": "13 de abril de 2014"},
-        {"episode": "3", "title": "Breaker of Chains", "airedDate": "20 de abril de 2014"},
-        {"episode": "4", "title": "Oathkeeper", "airedDate": "27 de abril de 2014"},
-        {"episode": "5", "title": "First of His Name", "airedDate": "4 de mayo de 2014"},
-        {"episode": "6", "title": "The Laws of Gods and Men", "airedDate": "11 de mayo de 2014"},
-        {"episode": "7", "title": "Mockingbird", "airedDate": "18 de mayo de 2014"},
-        {"episode": "8", "title": "The Mountain and the Viper", "airedDate": "1 de junio de de 2014"},
-        {"episode": "9", "title": "The Watchers on the Wall", "airedDate": "8 de junio de 2014"},
-        {"episode": "10", "title": "The Children", "airedDate": "15 de junio de 2014"}
-    ]
-},      
-{
+        {"episode": "1", "title": "Two Swords", "airedDate": "6-Abril-2014"},
+        {"episode": "2", "title": "The Lion and the Rose", "airedDate": "13-Abril-2014"},
+        {"episode": "3", "title": "Breaker of Chains", "airedDate": "20-Abril-2014"},
+        {"episode": "4", "title": "Oathkeeper", "airedDate": "27-Abril-2014"},
+        {"episode": "5", "title": "First of His Name", "airedDate": "4-Mayo-2014"},
+        {"episode": "6", "title": "The Laws of Gods and Men", "airedDate": "11-Mayo-2014"},
+        {"episode": "7", "title": "Mockingbird", "airedDate": "18-Mayo-2014"},
+        {"episode": "8", "title": "The Mountain and the Viper", "airedDate": "1-Junio-de 2014"},
+        {"episode": "9", "title": "The Watchers on the Wall", "airedDate": "8-Junio-2014"},
+        {"episode": "10", "title": "The Children", "airedDate": "15-Junio-2014"}
+        ]
+    },
+    {
     "season": "5",
-    "airedDate": "12 de abril de 2015",
+    "airedDate": "12-Abril-2015",
     "episodes": [ 
-        {"episode": "1", "title": "The Wars to Come", "airedDate": "12 de abril de 2015"},
-        {"episode": "2", "title": "The House of Black and White", "airedDate": "19 de abril dde 2015"},
-        {"episode": "3", "title": "High Sparrow", "airedDate": "26 de abril de 2015"},
-        {"episode": "4", "title": "Sons of the Harpy", "airedDate": "3 de mayo de 2015"},
-        {"episode": "5", "title": "Kill the Boy", "airedDate": "10 de mayo de 2015"},
-        {"episode": "6", "title": "Unbowed", "airedDate": "17 de mayo de 2015"},
-        {"episode": "7", "title": "The Gift", "airedDate": "24 de mayo de 2015"},
-        {"episode": "8", "title": "Hardhome", "airedDate": "31 de mayo de 2015"},
-        {"episode": "9", "title": "The Dance of Dragons", "airedDate": "7 de junio de 2015"},
-        {"episode": "10", "title": "Mother's Mercy", "airedDate": "14 de junio de 2015"}
-    ]
-},      
-{
+        {"episode": "1", "title": "The Wars to Come", "airedDate": "12-Abril-2015"},
+        {"episode": "2", "title": "The House of Black and White", "airedDate": "19-Abril dde 2015"},
+        {"episode": "3", "title": "High Sparrow", "airedDate": "26-Abril-2015"},
+        {"episode": "4", "title": "Sons of the Harpy", "airedDate": "3-Mayo-2015"},
+        {"episode": "5", "title": "Kill the Boy", "airedDate": "10-Mayo-2015"},
+        {"episode": "6", "title": "Unbowed", "airedDate": "17-Mayo-2015"},
+        {"episode": "7", "title": "The Gift", "airedDate": "24-Mayo-2015"},
+        {"episode": "8", "title": "Hardhome", "airedDate": "31-Mayo-2015"},
+        {"episode": "9", "title": "The Dance of Dragons", "airedDate": "7-Junio-2015"},
+        {"episode": "10", "title": "Mother's Mercy", "airedDate": "14-Junio-2015"}
+        ]
+    },
+    {
     "season": "6",
-    "airedDate": "24 de abril de 2016",
+    "airedDate": "24-Abril-2016",
     "episodes": [ 
-        {"episode": "1", "title": "The Red Woman", "airedDate": "24 de abril de 2016"},
-        {"episode": "2", "title": "Home", "airedDate": "1 de mayo de 2016"},
-        {"episode": "3", "title": "Oathbreaker", "airedDate": "8 de mayo de 2016"},
-        {"episode": "4", "title": "Book of the Stranger", "airedDate": "15 de mayo de 2016"},
-        {"episode": "5", "title": "The Door", "airedDate": "22 de mayo de 2016"},
-        {"episode": "6", "title": "Blood of My Blood", "airedDate": "29 de mayo de 2016"},
-        {"episode": "7", "title": "The Broken Man", "airedDate": "5 de junio de 2016"},
-        {"episode": "8", "title": "No One", "airedDate": "12 de junio de 2016"},
-        {"episode": "9", "title": "Battle of the Bastards", "airedDate": "19 de junio de 2016"},
-        {"episode": "10", "title": "The Winds of Winter", "airedDate": "26 de junio de 2016"}
-    ]
-},      
-{
+        {"episode": "1", "title": "The Red Woman", "airedDate": "24-Abril-2016"},
+        {"episode": "2", "title": "Home", "airedDate": "1-Mayo-2016"},
+        {"episode": "3", "title": "Oathbreaker", "airedDate": "8-Mayo-2016"},
+        {"episode": "4", "title": "Book of the Stranger", "airedDate": "15-Mayo-2016"},
+        {"episode": "5", "title": "The Door", "airedDate": "22-Mayo-2016"},
+        {"episode": "6", "title": "Blood of My Blood", "airedDate": "29-Mayo-2016"},
+        {"episode": "7", "title": "The Broken Man", "airedDate": "5-Junio-2016"},
+        {"episode": "8", "title": "No One", "airedDate": "12-Junio-2016"},
+        {"episode": "9", "title": "Battle of the Bastards", "airedDate": "19-Junio-2016"},
+        {"episode": "10", "title": "The Winds of Winter", "airedDate": "26-Junio-2016"}
+        ]
+    },
+    {
     "season": "7",
-    "airedDate": "16 de julio e 2017",
+    "airedDate": "16-Julio e 2017",
     "episodes": [ 
-        {"episode": "1", "title": "Dragonstone", "airedDate": "16 de julio de 2017"},
-        {"episode": "2", "title": "Stormborn", "airedDate": "23 de julio de 2017"},
-        {"episode": "3", "title": "The Queen's Justice", "airedDate": "30 de julio de 2017"},
-        {"episode": "4", "title": "The Spoils of War", "airedDate": "6 de agosto de 2017"},
-        {"episode": "5", "title": "Eastwatch", "airedDate": "13 de agosto de 2017"},
-        {"episode": "6", "title": "Beyond the Wall", "airedDate": "20 de agosto de 2017"},
-        {"episode": "7", "title": "The Dragon and the Wolf", "airedDate": "27 de agosto de 2017"}
-    ]
-}
+        {"episode": "1", "title": "Dragonstone", "airedDate": "16-Julio-2017"},
+        {"episode": "2", "title": "Stormborn", "airedDate": "23-Julio-2017"},
+        {"episode": "3", "title": "The Queen's Justice", "airedDate": "30-Julio-2017"},
+        {"episode": "4", "title": "The Spoils of War", "airedDate": "6-Agosto-2017"},
+        {"episode": "5", "title": "Eastwatch", "airedDate": "13-Agosto-2017"},
+        {"episode": "6", "title": "Beyond the Wall", "airedDate": "20-Agosto-2017"},
+        {"episode": "7", "title": "The Dragon and the Wolf", "airedDate": "27-Agosto-2017"}
+        ]
+    }
+]}

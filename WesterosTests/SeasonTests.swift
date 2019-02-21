@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import Westeros
 
 
 class SeasonTests: XCTestCase {
@@ -17,10 +18,10 @@ class SeasonTests: XCTestCase {
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        season = Season(seasonNum: "1", airedDate: Date)
+        season = Season(seasonNum: "1", airedDate: "17-Abril-2011")
         episodes = Episode(
-            { episodeNum: "1", title: "Winter Is Coming", airedDate: "17 de abril de 2011" },
-            { episodeNum: "2", title: "The Kingsroad", airedDate: "24 de abril de 2011" }
+            { episode: "1", title: "Winter Is Coming", airedDate: "17-Abril-2011" },
+            { episode: "2", title: "The Kingsroad", airedDate: "24-Abril-2011" }
         )
         
     }
