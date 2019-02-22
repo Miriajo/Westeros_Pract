@@ -1,5 +1,5 @@
 //
-//  SeasonListViewController.swift
+//  EpisodeListViewController.swift
 //  Westeros
 //
 //  Created by Casa on 22/2/19.
@@ -8,24 +8,29 @@
 
 import UIKit
 
-class SeasonListViewController: UITableViewController {
+class EpisodeListViewController: UITableViewController {
     
     // MARK: Properties
-    let model: [Season]
+    let model: [Episode]
     
     // MARK: Inizialization
-    init(model: [Season]) {
+    init(model: [Episode]) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
-        title = "Westeros Seasons"
+        
+        title = "Episodes"
+        //title = self.model.description
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     // MARK: - Table view data source
+
     override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -34,11 +39,10 @@ class SeasonListViewController: UITableViewController {
         return model.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Descubri la season a mostrar
-        let season = model[indexPath.row]
+        let episode = model[indexPath.row]
         
         // Crear la celda
         let cellId = "SeasonCell"
@@ -49,8 +53,7 @@ class SeasonListViewController: UITableViewController {
         }
         
         // Sincronizar celda-modelo
-        cell?.textLabel?.text = season.description
-        cell?.imageView?.image = season.image
+        cell?.textLabel?.text = episode.description + " - " + episode.title
         
         // Devolver la celda
         return cell!
@@ -63,13 +66,13 @@ class SeasonListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Averiguar la Season seleccionada
-        let season = model[indexPath.row]
+        let episode = model[indexPath.row]
         
         // Crear el controlador de detalle de la Season
-        let seasonDetailViewController = SeasonDetailViewController(model: season)
+        let episodeDetailViewController = EpisodeDetailViewController(model: episode)
         
         // Mostarlo (push)
-        navigationController?.pushViewController(seasonDetailViewController, animated: true)
+        navigationController?.pushViewController(episodeDetailViewController, animated: true)
     }
+    
 }
-

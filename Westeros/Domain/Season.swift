@@ -62,6 +62,10 @@ extension Season: CustomStringConvertible {
     var description: String {
         return "Season \(season)"
     }
+    
+    var episodesCount: String {
+        return "\(_episodes.count) Episodes"
+    }
 }
 
 extension Season: Equatable {

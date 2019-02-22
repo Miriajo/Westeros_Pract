@@ -10,21 +10,43 @@ import UIKit
 
 class EpisodeDetailViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var episodeTitleLabel: UILabel!
+    @IBOutlet weak var episodeDateLabel: UILabel!
+    @IBOutlet weak var episodeSummaryText: UITextView!
+    
+    // MARK: Properties
+    let model: Episode
+    
+    // MARK: Inizialization
+    init(model: Episode) {
+        self.model = model
+        super.init(nibName: nil, bundle: nil)
+        title = model.description
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
-
+    
+    
+    // MARK: - Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        syncModelWithView()
+        
+    }
+    
+    // MARK: Sync
+    func syncModelWithView() {
+        episodeTitleLabel.text = model.title
+        
+        // Indicar el formato de visualización de la fecha y convertirla a String
+        let displayFormatter = DateFormatter()
+        displayFormatter.dateFormat = "dd-MMMM-y"
+        episodeDateLabel.text = "Air Date: " + displayFormatter.string(from: model.airedDate)
+        
+        episodeSummaryText.text = model.summary
+        
+    }
+    
 }

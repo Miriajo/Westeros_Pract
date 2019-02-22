@@ -16,18 +16,21 @@ final class Episode {
     let episode: Int
     let title: String
     let airedDate: Date
+    let summary: String
     
     // MARK: Initialization
-    init(episode: Int, title: String, airedDate: Date) {
+    init(episode: Int, title: String, airedDate: Date, summary: String) {
         self.episode = episode
         self.title = title
         self.airedDate = airedDate
+        self.summary = summary
     }
     
-    init(episode: Int, title: String, airedDate: Date, season: Season) {
+    init(episode: Int, title: String, airedDate: Date, summary: String, season: Season) {
         self.episode = episode
         self.title = title
         self.airedDate = airedDate
+        self.summary = summary
         self.season = season
     }
     
@@ -47,6 +50,7 @@ extension Episode: CustomStringConvertible {
     var description: String {
         return "Episode \(episode)"
     }
+    
 }
 
 // Si dos objetos tienen el mismo hash, significa que tienen que ser iguales
