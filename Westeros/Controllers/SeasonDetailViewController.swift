@@ -17,7 +17,7 @@ class SeasonDetailViewController: UIViewController {
     
     
     // MARK: Properties
-    let model: Season
+    var model: Season
     
     // MARK: Inizialization
     init(model: Season) {
@@ -34,7 +34,7 @@ class SeasonDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         syncModelWithView()
-        setupUI()        
+        setupUI()
     }
     
     // MARK: Sync
@@ -71,4 +71,11 @@ class SeasonDetailViewController: UIViewController {
     }
  
     
+}
+
+extension SeasonDetailViewController: SeasonListViewControllerDelegate {
+    func seasonListViewController(_ viewController: SeasonListViewController, didSelectSeason season: Season) {
+        self.model = season
+        syncModelWithView()
+    }
 }

@@ -8,10 +8,16 @@
 
 import UIKit
 
+// Definir un delegado propio
+protocol SeasonListViewControllerDelegate {
+    func seasonListViewController(_ viewController: SeasonListViewController, didSelectSeason: Season)
+}
+
 class SeasonListViewController: UITableViewController {
     
     // MARK: Properties
     let model: [Season]
+    var delegate: SeasonListViewControllerDelegate?
     
     // MARK: Inizialization
     init(model: [Season]) {
@@ -65,11 +71,42 @@ class SeasonListViewController: UITableViewController {
         // Averiguar la Season seleccionada
         let season = model[indexPath.row]
         
-        // Crear el controlador de detalle de la Season
-        let seasonDetailViewController = SeasonDetailViewController(model: season)
+//        // Crear el controlador de detalle de la Season
+//        let seasonDetailViewController = SeasonDetailViewController(model: season)
+//
+        //
+//        // Mostarlo (push)
+//        navigationController?.pushViewController(seasonDetailViewController, animated: true)
         
-        // Mostarlo (push)
-        navigationController?.pushViewController(seasonDetailViewController, animated: true)
+        // Avisar al delegado
+        delegate?.seasonListViewController(self, didSelectSeason: season)
     }
 }
 
+extension SeasonListViewController {
+    func saveLastSelectedSeason(at index: Int) {
+        // UserDefaults será nuestro motor de persistencia
+        let userDefaults = UserDefaults.standard
+        
+        // Escribimos el index en una key de nuestro motor de persistencia
+        userDefaults.set(index, forKey: LAST_SEASON_KEY)
+        
+        // Guardamos
+        userDefaults.synchronize() // Por si acaso (save)
+    }
+    
+//    func lastSelectedSeason() -> Season {
+//        // UserDefaults
+//        let userDefaults = UserDefaults.standard
+//        
+//        // Leemos de nuestro motor de persistencia
+//        let index = userDefaults.integer(forKey: LAST_SEASON_KEY) // 0 es default
+//        
+//        // Devolvemos la casa situada en el index
+//        return season(at: index)
+//    }
+    
+    func house(at index: Int) -> Season {
+        return model[index]
+    }
+}
