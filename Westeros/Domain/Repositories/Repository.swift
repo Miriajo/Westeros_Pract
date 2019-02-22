@@ -77,13 +77,13 @@ final class LocalFactory: HouseFactory {
         formatter.dateFormat = "dd/MM/yyyy"
      
         // Creación de temporadas
-        let season1 = Season(season: 1, airedDate: formatter.date(from: "17/04/2011")!)
-        let season2 = Season(season: 2, airedDate: formatter.date(from: "1/04/2012")!)
-        let season3 = Season(season: 3, airedDate: formatter.date(from: "31/03/2013")!)
-        let season4 = Season(season: 4, airedDate: formatter.date(from: "6/04/2014")!)
-        let season5 = Season(season: 5, airedDate: formatter.date(from: "12/04/2015")!)
-        let season6 = Season(season: 6, airedDate: formatter.date(from: "24/04/2016")!)
-        let season7 = Season(season: 7, airedDate: formatter.date(from: "16/07/2017")!)
+        let season1 = Season(season: 1, airedDate: formatter.date(from: "17/04/2011")!, image: UIImage(named:"season1.jpg")!)
+        let season2 = Season(season: 2, airedDate: formatter.date(from: "1/04/2012")!, image: UIImage(named: "season2.jpg")!)
+        let season3 = Season(season: 3, airedDate: formatter.date(from: "31/03/2013")!, image: UIImage(named: "season3.jpg")!)
+        let season4 = Season(season: 4, airedDate: formatter.date(from: "6/04/2014")!, image: UIImage(named: "season4.jpg")!)
+        let season5 = Season(season: 5, airedDate: formatter.date(from: "12/04/2015")!, image: UIImage(named: "season5.jpg")!)
+        let season6 = Season(season: 6, airedDate: formatter.date(from: "24/04/2016")!, image: UIImage(named: "season6.jpg")!)
+        let season7 = Season(season: 7, airedDate: formatter.date(from: "16/07/2017")!, image: UIImage(named: "season7.jpg")!)
 
 
         // Creación de episodios diferentes temporadas

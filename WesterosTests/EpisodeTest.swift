@@ -24,7 +24,7 @@ class EpisodeTest: XCTestCase {
         formatter.dateFormat = "MM/dd/yyyy"
         
         if let d = formatter.date(from: dateStr) {
-            season1 = Season(season: 1, airedDate: d)
+            season1 = Season(season: 1, airedDate: d, image: UIImage(named:"season1.jpg")!)
             
             episodes = [ Episode(episode: 1, title: "Winter Is Comming", airedDate: d, season: season1),
                          Episode(episode: 2, title: "The Kingsroad", airedDate: d, season: season1)
@@ -32,9 +32,7 @@ class EpisodeTest: XCTestCase {
             
             print("Episodio 1: ", episodes[0].title)
             
-            let displayFormatter = DateFormatter()
-            displayFormatter.dateFormat = "MMM dd, y"
-            print(displayFormatter.string(from: d))
+           
         }
     }
     
@@ -56,7 +54,7 @@ class EpisodeTest: XCTestCase {
         XCTAssertNotNil(episodes[0].hashValue)
     }
     
-    func testPersonEquality() {
+    func testEpisodeEquality() {
         // Identidad
         XCTAssertEqual(episodes[0], episodes[0])
         
@@ -66,5 +64,9 @@ class EpisodeTest: XCTestCase {
         
         // Desigualdad
         XCTAssertNotEqual(episodes[0], episodes[1])
+    }
+    
+        func testEpisodeComparison() {
+        XCTAssertLessThan(episodes[0], episodes[1])
     }
 }

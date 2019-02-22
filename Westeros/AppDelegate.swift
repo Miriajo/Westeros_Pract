@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         window?.makeKeyAndVisible()
-        window?.backgroundColor = .red
+        window?.backgroundColor = .white
         
         // Crearnos los modelos
         let houses = Repository.local.houses
@@ -27,10 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Creamos los controladores (el que irá en master, y el que irá en el detail)
         let houseListViewController = HouseListViewController(model: houses)
+        let seasonListViewController = SeasonListViewController(model: seasons).wrappedInNavigation()
         
         // Recuperar la última casa seleccionada (si hay alguna)
         let lastHouseSelected = houseListViewController.lastSelectedHouse()
+        //let lastSeasonSelected = SeasonListViewController.lastSelectedSeason()
         
+        // Crear el controlador Detail de House y Season
         let houseDetailViewController = HouseDetailViewController(model: lastHouseSelected)
         
         // Asigar delegados
@@ -46,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ]
         
         // Asignamos el rootViewController del window
-        window?.rootViewController = splitViewController
+        window?.rootViewController = seasonListViewController//splitViewController
         
         //window?.rootViewController = HouseCollectionViewController(model: houses)
         

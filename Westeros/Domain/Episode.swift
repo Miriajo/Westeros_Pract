@@ -66,6 +66,9 @@ extension Episode: Equatable {
 
 extension Episode: Comparable {
     static func < (lhs: Episode, rhs: Episode) -> Bool {
-        return lhs.proxyForComparison < rhs.proxyForComparison
+        let d1: Date = lhs.proxyForComparison
+        let d2: Date = rhs.proxyForComparison
+        
+        return d1 < d2
     }
 }

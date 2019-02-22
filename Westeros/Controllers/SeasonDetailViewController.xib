@@ -12,32 +12,35 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SeasonDetailViewController" customModule="Westeros" customModuleProvider="target">
             <connections>
+                <outlet property="seasonDateLabel" destination="Mgn-lk-PW3" id="zI0-Z3-3er"/>
+                <outlet property="seasonPosterImg" destination="fOC-sy-FKp" id="bB3-hh-25U"/>
+                <outlet property="seasonTitleLabel" destination="Izc-Cj-eVK" id="0zG-Qy-DAk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izc-Cj-eVK">
-                    <rect key="frame" x="20" y="75" width="335" height="25"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izc-Cj-eVK">
+                    <rect key="frame" x="20" y="75" width="335" height="33"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="Label">
                             <attributes>
-                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                <font key="NSFont" size="18" name="Avenir-Heavy"/>
+                                <color key="NSColor" red="0.42758564392109683" green="0.63301662039136264" blue="0.72799951424870468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="24" name="Avenir-Heavy"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
                     </attributedString>
                     <nil key="highlightedColor"/>
+                    <size key="shadowOffset" width="2" height="1"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fOC-sy-FKp">
-                    <rect key="frame" x="68" y="170" width="239" height="313"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgn-lk-PW3">
-                    <rect key="frame" x="20" y="523" width="335" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgn-lk-PW3">
+                    <rect key="frame" x="20" y="522" width="335" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="Label">
                             <attributes>
@@ -48,19 +51,12 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fOC-sy-FKp">
+                    <rect key="frame" x="65" y="132" width="245" height="355"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="Mgn-lk-PW3" firstAttribute="top" secondItem="fOC-sy-FKp" secondAttribute="bottom" constant="40" id="1F0-Nz-Qwe"/>
-                <constraint firstItem="fOC-sy-FKp" firstAttribute="top" secondItem="Izc-Cj-eVK" secondAttribute="bottom" constant="75" id="6d5-Ui-aR5"/>
-                <constraint firstItem="Mgn-lk-PW3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7pi-hh-iDR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Izc-Cj-eVK" secondAttribute="trailing" constant="20" id="P8f-M8-HVx"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fOC-sy-FKp" secondAttribute="trailing" constant="68" id="V6v-oO-yBL"/>
-                <constraint firstItem="Izc-Cj-eVK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="55" id="oDE-ah-h8f"/>
-                <constraint firstItem="fOC-sy-FKp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="68" id="re1-NE-M3F"/>
-                <constraint firstItem="Izc-Cj-eVK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="w5N-H2-M6a"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Mgn-lk-PW3" secondAttribute="trailing" constant="20" id="zff-EX-fVk"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="132" y="154.27286356821591"/>
         </view>

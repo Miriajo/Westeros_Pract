@@ -28,7 +28,7 @@ class SeasonTest: XCTestCase {
         
         if let d = formatter.date(from: dateStr1) {
         
-            season1 = Season(season: 1, airedDate: d)
+            season1 = Season(season: 1, airedDate: d, image: UIImage(named:"season1.jpg")!)
             
             episodes = [ Episode(episode: 1, title: "Winter Is Comming", airedDate: d, season: season1),
                          Episode(episode: 2, title: "The Kingsroad", airedDate: d, season: season1)
@@ -37,7 +37,7 @@ class SeasonTest: XCTestCase {
         }
         
         if let d = formatter.date(from: dateStr2) {
-            season2 = Season(season: 1, airedDate: d)
+            season2 = Season(season: 1, airedDate: d, image: UIImage(named:"season2.jpg")!)
         }
     }
 
@@ -78,7 +78,7 @@ class SeasonTest: XCTestCase {
         
         // Igualdad
         let dateStr = formatter.date(from: "17/04/2011")!
-        let jinxed = Season(season: 1, airedDate: dateStr)
+        let jinxed = Season(season: 1, airedDate: dateStr, image: UIImage(named:"season1.jpg")!)
         XCTAssertEqual(season1, jinxed)
         
         // Desigualdad
