@@ -46,12 +46,12 @@ final class LocalFactory: HouseFactory {
         let targaryenHouse = House(name: "Targaryen", sigil: targaryenSigil, words: "Fuego y Sangre", wikiURL: targaryenURL)
         
         // Añadir algunos personajes
-        let robb = Person(name: "Robb", alias: "El Joven Lobo", house: starkHouse)
-        let arya = Person(name: "Arya", house: starkHouse)
-        let tyrion = Person(name: "Tyrion", alias: "El enano", house: lannisterHouse)
-        let cersei = Person(name: "Cersei", house: lannisterHouse)
-        let jaime = Person(name: "Jaime", alias: "El matarreyes", house: lannisterHouse)
-        let dani = Person(name: "Daenerys", alias: "Madre de Dragones", house: targaryenHouse)
+        let robb = Person(name: "Robb", alias: "El Joven Lobo", house: starkHouse, image: UIImage(named:"robb")!)
+        let arya = Person(name: "Arya", house: starkHouse, image: UIImage(named:"arya")!)
+        let tyrion = Person(name: "Tyrion", alias: "El enano", house: lannisterHouse, image: UIImage(named:"tyrion")!)
+        let cersei = Person(name: "Cersei", house: lannisterHouse, image: UIImage(named:"cersei")!)
+        let jaime = Person(name: "Jaime", alias: "El matarreyes", house: lannisterHouse, image: UIImage(named:"jaime")!)
+        let dani = Person(name: "Daenerys", alias: "Madre de Dragones", house: targaryenHouse, image: UIImage(named:"dany")!)
         
         starkHouse.add(persons: robb, arya)
         lannisterHouse.add(persons: tyrion, cersei, jaime)

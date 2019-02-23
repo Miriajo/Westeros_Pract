@@ -52,8 +52,7 @@ class WesterosTabBarController: UITabBarController {
          */
       
         // TODO: controlar si estamos en un iPad o iPhone para hacer el split view
-        // controllers = [houseListViewController.wrappedInNavigation(), seasonListViewController.wrappedInNavigation()]
-        
+         
         // Añadir los controladores al UITabBar
         viewControllers = [houseSplitViewController, seasonSplitViewController] as! [UIViewController]
         

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MemberDetailViewController" customModule="Westeros" customModuleProvider="target">
+            <connections>
+                <outlet property="memberAliasLabel" destination="MkF-B5-iCV" id="dXP-zI-MU5"/>
+                <outlet property="memberImage" destination="npV-L3-Rbz" id="QPV-ad-iZc"/>
+                <outlet property="memberNameLabel" destination="lqQ-sQ-qjh" id="FyL-Hv-ILf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqQ-sQ-qjh">
+                    <rect key="frame" x="157.5" y="40" width="60.5" height="33"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Label">
+                            <attributes>
+                                <color key="NSColor" red="0.42758564392109683" green="0.63301662039136264" blue="0.72799951424870468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="24" name="Avenir-Heavy"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                    <size key="shadowOffset" width="2" height="1"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkF-B5-iCV">
+                    <rect key="frame" x="165.5" y="90" width="44" height="25"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Label">
+                            <attributes>
+                                <font key="NSFont" size="18" name="Avenir-Light"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="npV-L3-Rbz">
+                    <rect key="frame" x="0.0" y="137" width="375" height="494"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="npV-L3-Rbz" firstAttribute="top" secondItem="MkF-B5-iCV" secondAttribute="bottomMargin" constant="30" id="0PO-I2-zC4"/>
+                <constraint firstItem="MkF-B5-iCV" firstAttribute="top" secondItem="lqQ-sQ-qjh" secondAttribute="bottomMargin" constant="25" id="7JR-q8-Xkx"/>
+                <constraint firstItem="npV-L3-Rbz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Jgp-ye-L8c"/>
+                <constraint firstItem="lqQ-sQ-qjh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="pIc-ew-DH1"/>
+                <constraint firstItem="lqQ-sQ-qjh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qXm-nK-YAP"/>
+                <constraint firstItem="MkF-B5-iCV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tcj-3F-sZ7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="53.600000000000001" y="53.523238380809602"/>
+        </view>
+    </objects>
+</document>

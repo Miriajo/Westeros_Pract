@@ -47,6 +47,8 @@ class EpisodeDetailViewController: UIViewController {
         
         episodeSummaryText.text = model.summary
         
+     
+        
     }
     
 }

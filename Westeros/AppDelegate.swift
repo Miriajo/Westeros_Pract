@@ -20,8 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         window?.makeKeyAndVisible()
         window?.backgroundColor = .white
 
-        
-        
         /*
          CREAR EL TAB BAR
          */

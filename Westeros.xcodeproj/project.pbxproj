@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4A02EF06221F4E6900C5E4A8 /* SeasonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A02EF04221F4E6900C5E4A8 /* SeasonDetailViewController.swift */; };
 		4A02EF07221F4E6900C5E4A8 /* SeasonDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A02EF05221F4E6900C5E4A8 /* SeasonDetailViewController.xib */; };
+		4A040AFF2220EBBF00DC2AF9 /* MemberDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A040AFD2220EBBF00DC2AF9 /* MemberDetailViewController.swift */; };
+		4A040B002220EBBF00DC2AF9 /* MemberDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A040AFE2220EBBF00DC2AF9 /* MemberDetailViewController.xib */; };
 		4A0A3BBE22209FAF00A9CCE5 /* WesterosTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A3BBC22209FAF00A9CCE5 /* WesterosTabBarController.swift */; };
 		4A14C3E0222010CD000CB893 /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A14C3DE222010CD000CB893 /* EpisodeListViewController.swift */; };
 		4A14C3E1222010CD000CB893 /* EpisodeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A14C3DF222010CD000CB893 /* EpisodeListViewController.xib */; };
@@ -64,6 +66,8 @@
 /* Begin PBXFileReference section */
 		4A02EF04221F4E6900C5E4A8 /* SeasonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonDetailViewController.swift; sourceTree = "<group>"; };
 		4A02EF05221F4E6900C5E4A8 /* SeasonDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonDetailViewController.xib; sourceTree = "<group>"; };
+		4A040AFD2220EBBF00DC2AF9 /* MemberDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailViewController.swift; sourceTree = "<group>"; };
+		4A040AFE2220EBBF00DC2AF9 /* MemberDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberDetailViewController.xib; sourceTree = "<group>"; };
 		4A0A3BBC22209FAF00A9CCE5 /* WesterosTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WesterosTabBarController.swift; sourceTree = "<group>"; };
 		4A14C3DE222010CD000CB893 /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
 		4A14C3DF222010CD000CB893 /* EpisodeListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeListViewController.xib; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 				4AFA08F7221F8856002DBF7F /* EpisodeDetailViewController.xib */,
 				4A14C3DE222010CD000CB893 /* EpisodeListViewController.swift */,
 				4A14C3DF222010CD000CB893 /* EpisodeListViewController.xib */,
+				4A040AFD2220EBBF00DC2AF9 /* MemberDetailViewController.swift */,
+				4A040AFE2220EBBF00DC2AF9 /* MemberDetailViewController.xib */,
 				4A0A3BBC22209FAF00A9CCE5 /* WesterosTabBarController.swift */,
 			);
 			path = Controllers;
@@ -326,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A040B002220EBBF00DC2AF9 /* MemberDetailViewController.xib in Resources */,
 				AC61626D2208F2BC00EC1FD1 /* lannister.jpg in Resources */,
 				AC61627C220B9F9C00EC1FD1 /* WikiViewController.xib in Resources */,
 				4AA382BC221E9A7200188418 /* got.json in Resources */,
@@ -365,6 +372,7 @@
 				AC2B75FB2212226B00014F4B /* Constants.swift in Sources */,
 				4AA382BE221EA37F00188418 /* SeasonsData.swift in Sources */,
 				AC6162712208FF0500EC1FD1 /* UIViewController+Navigation.swift in Sources */,
+				4A040AFF2220EBBF00DC2AF9 /* MemberDetailViewController.swift in Sources */,
 				AC6162662208EA4D00EC1FD1 /* HouseDetailViewController.swift in Sources */,
 				4A0A3BBE22209FAF00A9CCE5 /* WesterosTabBarController.swift in Sources */,
 				AC6E68312203A6DA00EB0430 /* Sigil.swift in Sources */,

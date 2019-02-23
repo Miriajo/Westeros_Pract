@@ -99,7 +99,24 @@ extension MemberListViewController: UITableViewDataSource {
         // Devolver la celda
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Averiguar la Season seleccionada
+        let member = model[indexPath.row]
+        
+        // Crear el controlador de detalle de la Season
+        let memberDetailViewController = MemberDetailViewController(model: member)
+        
+        // Asignar boton back
+        let backButton = UIBarButtonItem(title: "\(member.house)", style: .plain, target: self, action: Selector(("none")))
+        
+        navigationController?.navigationItem.backBarButtonItem = backButton
+        
+        // Mostarlo (push)
+        navigationController?.pushViewController(memberDetailViewController, animated: true)
+    }
 }
+
 
 extension MemberListViewController: UITableViewDelegate {
     
