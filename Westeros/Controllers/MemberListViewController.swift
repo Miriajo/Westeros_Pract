@@ -13,7 +13,7 @@ class MemberListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Properties
-    let model: [Person]
+    var model: [Person]
     
     // MARK: Initialization
     init(model: [Person]) {
@@ -33,6 +33,45 @@ class MemberListViewController: UIViewController {
         // Te va a seguir ocurriendo tengas 10 días de experiencia o 10 años
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Nos damos de alta en las notificaciones
+        // Tan pronto como te des de alta, implementa el código para darte de baja. Si no, te olvidarás
+        let notificationCenter = NotificationCenter.default
+        let name = Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME)
+        
+        notificationCenter.addObserver(self,
+                                       selector: #selector(houseDidChange(notification:)),
+                                       name: name,
+                                       object: nil) // Object es quien manda la notific
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Nos damos de baja en las notificaciones
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self)
+    }
+    
+    // MARK: Notification
+    @objc func houseDidChange(notification: Notification) {
+        // Sacar el userInfo de la noti, y la casa del userInfo
+        guard let info = notification.userInfo,
+            let house = info[HOUSE_KEY] as? House else {
+                return
+        }
+        
+        // Actualizar mi modelo
+        model = house.sortedMembers
+        
+        // Asignar el botón de vuelta
+        let backButton = UIBarButtonItem(title: house.name, style: .plain, target: self, action: Selector(("none")))
+        navigationItem.backBarButtonItem = backButton
+        
+        // Actualizar vista recargando el controlador
+        tableView.reloadData()
     }
 }
 

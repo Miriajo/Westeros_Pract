@@ -88,6 +88,7 @@ class HouseListViewController: UITableViewController {
         // Guardar la casa seleccionada
         saveLastSelectedHouse(at: indexPath.row)
     }
+    
 }
 
 extension HouseListViewController {

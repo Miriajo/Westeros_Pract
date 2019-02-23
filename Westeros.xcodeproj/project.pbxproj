@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A02EF06221F4E6900C5E4A8 /* SeasonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A02EF04221F4E6900C5E4A8 /* SeasonDetailViewController.swift */; };
 		4A02EF07221F4E6900C5E4A8 /* SeasonDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A02EF05221F4E6900C5E4A8 /* SeasonDetailViewController.xib */; };
+		4A0A3BBE22209FAF00A9CCE5 /* WesterosTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A3BBC22209FAF00A9CCE5 /* WesterosTabBarController.swift */; };
 		4A14C3E0222010CD000CB893 /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A14C3DE222010CD000CB893 /* EpisodeListViewController.swift */; };
 		4A14C3E1222010CD000CB893 /* EpisodeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A14C3DF222010CD000CB893 /* EpisodeListViewController.xib */; };
 		4A1E8037221CD4F000E90C27 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E8036221CD4F000E90C27 /* Season.swift */; };
@@ -63,6 +64,7 @@
 /* Begin PBXFileReference section */
 		4A02EF04221F4E6900C5E4A8 /* SeasonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonDetailViewController.swift; sourceTree = "<group>"; };
 		4A02EF05221F4E6900C5E4A8 /* SeasonDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonDetailViewController.xib; sourceTree = "<group>"; };
+		4A0A3BBC22209FAF00A9CCE5 /* WesterosTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WesterosTabBarController.swift; sourceTree = "<group>"; };
 		4A14C3DE222010CD000CB893 /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
 		4A14C3DF222010CD000CB893 /* EpisodeListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeListViewController.xib; sourceTree = "<group>"; };
 		4A1E8036221CD4F000E90C27 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				4AFA08F7221F8856002DBF7F /* EpisodeDetailViewController.xib */,
 				4A14C3DE222010CD000CB893 /* EpisodeListViewController.swift */,
 				4A14C3DF222010CD000CB893 /* EpisodeListViewController.xib */,
+				4A0A3BBC22209FAF00A9CCE5 /* WesterosTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				4AA382BE221EA37F00188418 /* SeasonsData.swift in Sources */,
 				AC6162712208FF0500EC1FD1 /* UIViewController+Navigation.swift in Sources */,
 				AC6162662208EA4D00EC1FD1 /* HouseDetailViewController.swift in Sources */,
+				4A0A3BBE22209FAF00A9CCE5 /* WesterosTabBarController.swift in Sources */,
 				AC6E68312203A6DA00EB0430 /* Sigil.swift in Sources */,
 				4AFA08F4221F657D002DBF7F /* SeasonListViewController.swift in Sources */,
 				AC95EB85220CE5EA0021E69D /* MemberListViewController.swift in Sources */,

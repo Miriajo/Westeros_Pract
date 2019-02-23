@@ -51,6 +51,9 @@ extension Episode: CustomStringConvertible {
         return "Episode \(episode)"
     }
     
+    var seasonDesc: String {
+        return "Season \(season!.season)"
+    }
 }
 
 // Si dos objetos tienen el mismo hash, significa que tienen que ser iguales

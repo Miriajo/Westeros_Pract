@@ -77,6 +77,10 @@ class WikiViewController: UIViewController {
         // Actualizar mi modelo
         model = house
         
+        // Asignar el botón de vuelta
+        let backButton = UIBarButtonItem(title: model.name, style: .plain, target: self, action: Selector(("none")))
+        navigationItem.backBarButtonItem = backButton
+        
         // Sincronizar modelo y vista
         syncModelWithView()
     }

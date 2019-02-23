@@ -71,15 +71,22 @@ class SeasonListViewController: UITableViewController {
         // Averiguar la Season seleccionada
         let season = model[indexPath.row]
         
-//        // Crear el controlador de detalle de la Season
-//        let seasonDetailViewController = SeasonDetailViewController(model: season)
-//
-        //
-//        // Mostarlo (push)
-//        navigationController?.pushViewController(seasonDetailViewController, animated: true)
-        
         // Avisar al delegado
         delegate?.seasonListViewController(self, didSelectSeason: season)
+        
+        
+        // Emitir la misma info por notificaciones
+        let notificationCenter = NotificationCenter.default
+        // Creamos la notificación
+        let notification = Notification(name: Notification.Name(SEASON_DID_CHANGE_NOTIFICATION_NAME), object: self, userInfo: [SEASON_KEY: season])
+        
+        // Enviamos la notificación
+        notificationCenter.post(notification)
+        
+        // Guardar la casa seleccionada
+        saveLastSelectedSeason(at: indexPath.row)
+        
+        
     }
 }
 
@@ -95,18 +102,18 @@ extension SeasonListViewController {
         userDefaults.synchronize() // Por si acaso (save)
     }
     
-//    func lastSelectedSeason() -> Season {
-//        // UserDefaults
-//        let userDefaults = UserDefaults.standard
-//        
-//        // Leemos de nuestro motor de persistencia
-//        let index = userDefaults.integer(forKey: LAST_SEASON_KEY) // 0 es default
-//        
-//        // Devolvemos la casa situada en el index
-//        return season(at: index)
-//    }
+    func lastSelectedSeason() -> Season {
+        // UserDefaults
+        let userDefaults = UserDefaults.standard
+        
+        // Leemos de nuestro motor de persistencia
+        let index = userDefaults.integer(forKey: LAST_SEASON_KEY) // 0 es default
+        
+        // Devolvemos la casa situada en el index
+        return season(at: index)
+    }
     
-    func house(at index: Int) -> Season {
+    func season(at index: Int) -> Season {
         return model[index]
     }
 }

@@ -23,7 +23,7 @@ class SeasonDetailViewController: UIViewController {
     init(model: Season) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
-        title = model.description
+        title = self.model.description
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,9 +33,28 @@ class SeasonDetailViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        // Nos damos de alta en las notificaciones
+        // Tan pronto como te des de alta, implementa el código para darte de baja. Si no, te olvidarás
+        let notificationCenter = NotificationCenter.default
+        let name = Notification.Name(SEASON_DID_CHANGE_NOTIFICATION_NAME)
+        
+        notificationCenter.addObserver(self,
+                                       selector: #selector(seasonDidChange(notification:)),
+                                       name: name,
+                                       object: nil) // Object es quien manda la notific
+        
         syncModelWithView()
         setupUI()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Nos damos de baja en las notificaciones
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self)
+    }
+    
     
     // MARK: Sync
     func syncModelWithView() {
@@ -58,8 +77,14 @@ class SeasonDetailViewController: UIViewController {
         // Crear el boton para ver los Episodes
         let episodesButton = UIBarButtonItem(title: "Episodes", style: .plain, target: self, action: #selector(displayEpisodes))
         
-        // Mostrarlo
+        // Asignar el botón de vuelta
+        let backButton = UIBarButtonItem(title: model.description, style: .plain, target: self, action: Selector(("none")))
+        
+        // Mostrar los botones
+        navigationItem.title = model.description
         navigationItem.rightBarButtonItem = episodesButton
+        navigationItem.backBarButtonItem = backButton
+        
     }
     
     @objc func displayEpisodes() {
@@ -70,7 +95,25 @@ class SeasonDetailViewController: UIViewController {
         navigationController?.pushViewController(episodeListViewController, animated: true)
     }
  
-    
+    // MARK: Notification
+    @objc func seasonDidChange(notification: Notification) {
+        // Sacar el userInfo de la noti, y la casa del userInfo
+        guard let info = notification.userInfo,
+            let season = info[SEASON_KEY] as? Season else {
+                return
+        }
+        
+        // Actualizar mi modelo
+        model = season
+        
+        // Asignar el botón de vuelta
+        let backButton = UIBarButtonItem(title: model.description, style: .plain, target: self, action: Selector(("none")))
+        navigationItem.backBarButtonItem = backButton
+        
+        // Sincronizar modelo y vista
+        syncModelWithView()
+        setupUI()
+    }
 }
 
 extension SeasonDetailViewController: SeasonListViewControllerDelegate {
