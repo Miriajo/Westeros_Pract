@@ -71,8 +71,13 @@ class SeasonListViewController: UITableViewController {
         // Averiguar la Season seleccionada
         let season = model[indexPath.row]
         
-        delegate?.seasonListViewController(self, didSelectSeason: season)
-       
+        // Si es un iPhone hacer un push al Detail, si no actualizar el delegate
+        if (UIDevice.current.userInterfaceIdiom == .phone) {
+            navigationController?.pushViewController(SeasonDetailViewController(model: season), animated: true)
+        } else {
+            delegate?.seasonListViewController(self, didSelectSeason: season)
+        }
+        
         // Emitir la misma info por notificaciones
         let notificationCenter = NotificationCenter.default
         // Creamos la notificación

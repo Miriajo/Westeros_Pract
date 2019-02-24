@@ -72,8 +72,15 @@ class HouseListViewController: UITableViewController {
         
         // Averiguar la casa que se ha pulsado
         let house = model[indexPath.row]
-       
-        delegate?.houseListViewController(self, didSelectHouse: house)
+
+        // Si es un iPhone hacer un push al Detail, si no actualizar el delegate
+        if (UIDevice.current.userInterfaceIdiom == .phone) {
+            navigationController?.pushViewController(HouseDetailViewController(model: house), animated: true)
+        } else {
+            delegate?.houseListViewController(self, didSelectHouse: house)
+        }
+        
+        
         
         // Emitir la misma info por notificaciones
         let notificationCenter = NotificationCenter.default
