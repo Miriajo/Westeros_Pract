@@ -45,6 +45,12 @@ class RepositoryTests: XCTestCase {
         XCTAssertNil(keepcodig)
     }
     
+    func testLocalRepositoryHouseByNameSafety() {
+        let name = Repository.local.house(named: "Stark")
+        XCTAssertNotNil(name)
+    }
+    
+    
     // given-when-then
     func testLocalRepository_HousesFilteredBy_ReturnsTheCorrectValue() {
 //        let filtered = Repository.local.houses {

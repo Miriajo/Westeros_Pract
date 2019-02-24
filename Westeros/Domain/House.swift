@@ -50,6 +50,7 @@ extension House {
 //        }
         persons.forEach { add(person: $0) }
     }
+    
 }
 
 extension House {

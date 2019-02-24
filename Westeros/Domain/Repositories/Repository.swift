@@ -16,6 +16,7 @@ protocol HouseFactory {
     typealias HouseFilter = (House) -> Bool
     var houses: [House] { get } // sólo get porque será de sólo lectura
     func house(named: String) -> House?
+    func house(named: String) -> String
     func houses(filteredBy filter: HouseFilter) -> [House]
     
     // MARK: Inizialization - Season
@@ -24,11 +25,16 @@ protocol HouseFactory {
     var seasons: [Season] { get } // sólo get porque será de sólo lectura
     func season(number: Int) -> Season?
     func seasons(filteredBy filter: SeasonFilter) -> [Season]
-
+   
 }
 
 final class LocalFactory: HouseFactory {
 
+    enum Named: String {
+        case stark = "Stark"
+        case lannister = "Lannister"
+        case targaryen = "Targaryen"
+    }
 
     var houses: [House] {
         // Creación de casas
@@ -64,6 +70,21 @@ final class LocalFactory: HouseFactory {
         //let house = houses.filter{ $0.name == name }.first
         let house = houses.first{ $0.name.uppercased() == name.uppercased() } // Con uppercased() "normalizamos los valores"
         return house
+    }
+    
+    func house(named name: String) -> String {
+        
+        switch name {
+            case Named.stark.rawValue:
+                return Named.stark.rawValue
+            case Named.lannister.rawValue:
+                return Named.lannister.rawValue
+            case Named.targaryen.rawValue:
+                return Named.lannister.rawValue
+          
+        default:
+            return "nothing"
+        }
     }
     
     func houses(filteredBy theFilter: (House) -> Bool) -> [House] {
