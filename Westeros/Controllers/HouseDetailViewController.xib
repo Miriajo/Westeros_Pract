@@ -23,27 +23,21 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fem-gG-ZQj">
-                    <rect key="frame" x="0.0" y="145.66666666666663" width="375" height="243.66666666666674"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZ0-MT-IYO">
-                    <rect key="frame" x="164.66666666666666" y="69" width="45.666666666666657" height="24.666666666666671"/>
-                    <attributedString key="attributedText">
-                        <fragment content="Label">
-                            <attributes>
-                                <font key="NSFont" size="18" name="Avenir-Heavy"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZ0-MT-IYO">
+                    <rect key="frame" x="157.33333333333334" y="69" width="60.666666666666657" height="33"/>
+                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
+                    <color key="textColor" red="0.42758564392109683" green="0.63301662039136264" blue="0.72799951424870468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fem-gG-ZQj">
+                    <rect key="frame" x="0.0" y="146" width="375" height="440"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLb-zR-cRe">
-                    <rect key="frame" x="168" y="409.33333333333331" width="39" height="22"/>
+                    <rect key="frame" x="165.33333333333334" y="623" width="44.333333333333343" height="24.666666666666629"/>
                     <attributedString key="attributedText">
                         <fragment content="Label">
                             <attributes>
-                                <font key="NSFont" size="16" name="Avenir-Light"/>
+                                <font key="NSFont" size="18" name="Avenir-MediumOblique"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
@@ -53,17 +47,15 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Fem-gG-ZQj" firstAttribute="top" secondItem="qZ0-MT-IYO" secondAttribute="bottom" constant="52" id="Nlr-D1-har"/>
-                <constraint firstItem="Fem-gG-ZQj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ghk-VG-9ur"/>
-                <constraint firstItem="Fem-gG-ZQj" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="hX6-2R-Gfx"/>
-                <constraint firstItem="eLb-zR-cRe" firstAttribute="top" secondItem="Fem-gG-ZQj" secondAttribute="bottom" constant="20" id="kyQ-na-xCp"/>
-                <constraint firstAttribute="trailing" secondItem="qZ0-MT-IYO" secondAttribute="trailing" constant="20" id="uZo-Gy-qfk"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qZ0-MT-IYO" secondAttribute="trailing" constant="164.66999999999999" id="x6p-Hb-eyA"/>
-                <constraint firstItem="Fem-gG-ZQj" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="y1y-Ok-dqF"/>
-                <constraint firstItem="eLb-zR-cRe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="znq-6r-45F"/>
+                <constraint firstItem="eLb-zR-cRe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WVo-Tj-prD"/>
+                <constraint firstItem="qZ0-MT-IYO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="XqN-BH-HSH"/>
+                <constraint firstItem="qZ0-MT-IYO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mhQ-wa-qwq"/>
+                <constraint firstItem="Fem-gG-ZQj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ofH-Td-u4R"/>
+                <constraint firstItem="eLb-zR-cRe" firstAttribute="top" secondItem="Fem-gG-ZQj" secondAttribute="bottomMargin" constant="45" id="u5X-NE-RKG"/>
+                <constraint firstItem="Fem-gG-ZQj" firstAttribute="top" secondItem="qZ0-MT-IYO" secondAttribute="bottomMargin" constant="52" id="yAq-N6-xai"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="37.600000000000001" y="4.0479760119940034"/>
+            <point key="canvasLocation" x="37.600000000000001" y="3.6945812807881775"/>
         </view>
     </objects>
 </document>

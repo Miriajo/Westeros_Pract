@@ -15,11 +15,15 @@ class WesterosTabBarController: UITabBarController {
     var lastHouseSelected: House?
     var houseDetailViewController: HouseDetailViewController?
     var houseSplitViewController: UISplitViewController?
+    var houseViewController: UIViewController?
     
     var seasonListViewController: SeasonListViewController?
     var lastSeasonSelected: Season?
     var seasonDetailViewController: SeasonDetailViewController?
     var seasonSplitViewController: UISplitViewController?
+    
+    var episodeListViewController: EpisodeListViewController?
+    var episodeDetailViewController: EpisodeDetailViewController?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nil, bundle: nil)
@@ -52,10 +56,30 @@ class WesterosTabBarController: UITabBarController {
          */
       
         // TODO: controlar si estamos en un iPad o iPhone para hacer el split view
-         
-        // Añadir los controladores al UITabBar
-        viewControllers = [houseSplitViewController, seasonSplitViewController] as! [UIViewController]
         
+        if UIApplication.shared.statusBarOrientation.isLandscape && UIDevice.current.userInterfaceIdiom != .phone {
+            // Crear título e icono del UITabBar para HOUSES
+            houseSplitViewController!.title = "Houses"
+            houseSplitViewController!.tabBarItem.image = UIImage(named: "Houses")
+            // Crear título e icono del UITabBar para SEASONS
+            seasonSplitViewController?.title = "Seasons"
+            seasonSplitViewController?.tabBarItem.image = UIImage(named: "Seasons")
+
+            
+            // Añadir los controladores al UITabBar
+            viewControllers = [houseSplitViewController, seasonSplitViewController] as? [UIViewController]
+        }
+        else {
+            // Crear título e icono del UITabBar para HOUSES
+            houseListViewController!.title = "Houses"
+            houseListViewController!.tabBarItem.image = UIImage(named: "Houses")
+            // Crear título e icono del UITabBar para SEASONS
+            seasonListViewController?.title = "Seasons"
+            seasonListViewController?.tabBarItem.image = UIImage(named: "Seasons")
+
+            
+            viewControllers = [houseListViewController?.wrappedInNavigation(), seasonListViewController?.wrappedInNavigation()] as? [UIViewController]
+        }
         
     }
     
@@ -72,17 +96,14 @@ class WesterosTabBarController: UITabBarController {
         // Un objeto SOLO PUEDE TENER UN DELEGADO
         // Un objeto, puede ser delegado de muchos otros objetos
         houseListViewController?.delegate = houseDetailViewController
-        
+    
         // Creamos el split view controller y asignamos los controladores
         houseSplitViewController = UISplitViewController()
-        houseSplitViewController?.viewControllers = [
-            houseListViewController?.wrappedInNavigation(),
-            houseDetailViewController?.wrappedInNavigation()
-            ] as! [UIViewController]
         
-        // Crear título e icono del UITabBar para HOUSES
-        houseSplitViewController!.title = "Houses"
-        houseSplitViewController!.tabBarItem.image = UIImage(named: "Houses")
+        houseSplitViewController?.viewControllers = [
+                houseListViewController?.wrappedInNavigation(),
+                houseDetailViewController?.wrappedInNavigation()
+                ] as! [UIViewController]
         
     }
     
@@ -98,6 +119,7 @@ class WesterosTabBarController: UITabBarController {
         // Asignar el delegado
         seasonListViewController?.delegate = seasonDetailViewController
         
+        
         // Creamos el split view controller y asignamos los controladores
         seasonSplitViewController = UISplitViewController()
         seasonSplitViewController?.viewControllers = [
@@ -105,8 +127,5 @@ class WesterosTabBarController: UITabBarController {
             seasonDetailViewController?.wrappedInNavigation()
             ] as! [UIViewController]
         
-        // Crear título e icono del UITabBar para SEASONS
-        seasonSplitViewController?.title = "Seasons"
-        seasonSplitViewController?.tabBarItem.image = UIImage(named: "Seasons")
     }
 }

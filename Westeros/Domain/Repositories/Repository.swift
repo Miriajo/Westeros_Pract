@@ -32,9 +32,9 @@ final class LocalFactory: HouseFactory {
 
     var houses: [House] {
         // Creación de casas
-        let starkSigil = Sigil(image: UIImage(named: "codeIsComing")!, description: "Lobo Huargo")
-        let lannisterSigil = Sigil(image: UIImage(named: "lannister")!, description: "León Rampante")
-        let targaryenSigil = Sigil(image: UIImage(named: "targaryenSmall")!, description: "Dragón tricéfalo")
+        let starkSigil = Sigil(image: UIImage(named: "stark_sigil")!, description: "Lobo Huargo")
+        let lannisterSigil = Sigil(image: UIImage(named: "lannister_sigil")!, description: "León Rampante")
+        let targaryenSigil = Sigil(image: UIImage(named: "targaryen_sigil")!, description: "Dragón tricéfalo")
         
         let starkURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")!
         let lannisterURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Lannister")!

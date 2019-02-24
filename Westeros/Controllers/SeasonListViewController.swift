@@ -71,9 +71,15 @@ class SeasonListViewController: UITableViewController {
         // Averiguar la Season seleccionada
         let season = model[indexPath.row]
         
-        // Avisar al delegado
-        delegate?.seasonListViewController(self, didSelectSeason: season)
-        
+        // Chequear dispositivo
+        if UIApplication.shared.statusBarOrientation.isLandscape && UIDevice.current.userInterfaceIdiom != .phone {
+            // Avisar al delegado
+            delegate?.seasonListViewController(self, didSelectSeason: season)
+        } else {
+            let seasonDetailViewController = SeasonDetailViewController(model: season)
+            navigationController?.pushViewController(seasonDetailViewController, animated: true)
+        }
+                
         
         // Emitir la misma info por notificaciones
         let notificationCenter = NotificationCenter.default

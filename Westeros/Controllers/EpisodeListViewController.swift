@@ -9,6 +9,7 @@
 import UIKit
 
 class EpisodeListViewController: UITableViewController {
+  
     
     // MARK: Properties
     var model: [Episode]
@@ -19,6 +20,7 @@ class EpisodeListViewController: UITableViewController {
         super.init(nibName: nil, bundle: nil)
         
         title = "Episodes"
+                
     }
     
    
@@ -40,6 +42,7 @@ class EpisodeListViewController: UITableViewController {
                                        name: name,
                                        object: nil) // Object es quien manda la notific
         
+       syncModelWithViewList()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -60,13 +63,19 @@ class EpisodeListViewController: UITableViewController {
         // Actualizar mi modelo
         model = season.sortedEpisodes
         
+        syncModelWithViewList()
+   
+    }
+    
+    // MARK: Sync
+    func syncModelWithViewList() {
+      
         // Asignar el botón de vuelta
-        let backButton = UIBarButtonItem(title: season.description, style: .plain, target: self, action: Selector(("none")))
+        let backButton = UIBarButtonItem(title: model[0].season!.description, style: .plain, target: self, action: Selector(("none")))
         navigationController?.navigationBar.backItem?.backBarButtonItem = backButton
         
         // Recargamos el controlador
         tableView.reloadData()
-   
     }
     
     // MARK: - Table view data source
@@ -113,13 +122,17 @@ class EpisodeListViewController: UITableViewController {
         // Crear el controlador de detalle de la Season
         let episodeDetailViewController = EpisodeDetailViewController(model: episode)
         
-        // Asignar boton back
-        let backButton = UIBarButtonItem(title: "Season \(episode.seasonDesc)", style: .plain, target: self, action: Selector(("none")))
-        
-        navigationController?.navigationItem.backBarButtonItem = backButton
-        
         // Mostarlo (push)
         navigationController?.pushViewController(episodeDetailViewController, animated: true)
+    }
+    
+}
+
+extension EpisodeListViewController: EpisodeDetailViewControllerDelegate {
+    func episodeDetailViewController(_ viewController: EpisodeDetailViewController, season: Season) {
+        self.model = season.sortedEpisodes
+        syncModelWithViewList()
+        
     }
     
 }

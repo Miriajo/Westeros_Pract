@@ -49,7 +49,7 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="npV-L3-Rbz">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="npV-L3-Rbz">
                     <rect key="frame" x="0.0" y="137" width="375" height="494"/>
                 </imageView>
             </subviews>
@@ -57,7 +57,9 @@
             <constraints>
                 <constraint firstItem="npV-L3-Rbz" firstAttribute="top" secondItem="MkF-B5-iCV" secondAttribute="bottomMargin" constant="30" id="0PO-I2-zC4"/>
                 <constraint firstItem="MkF-B5-iCV" firstAttribute="top" secondItem="lqQ-sQ-qjh" secondAttribute="bottomMargin" constant="25" id="7JR-q8-Xkx"/>
-                <constraint firstItem="npV-L3-Rbz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Jgp-ye-L8c"/>
+                <constraint firstItem="npV-L3-Rbz" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="PqW-4d-ZJb"/>
+                <constraint firstItem="npV-L3-Rbz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WKn-ai-gfp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="npV-L3-Rbz" secondAttribute="bottomMargin" constant="44" id="oHc-g0-bVg"/>
                 <constraint firstItem="lqQ-sQ-qjh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="pIc-ew-DH1"/>
                 <constraint firstItem="lqQ-sQ-qjh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qXm-nK-YAP"/>
                 <constraint firstItem="MkF-B5-iCV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tcj-3F-sZ7"/>

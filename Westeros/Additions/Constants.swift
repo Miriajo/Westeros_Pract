@@ -16,4 +16,3 @@ let LAST_HOUSE_KEY = "Last house key"
 let SEASON_DID_CHANGE_NOTIFICATION_NAME = "SeasonDidChangeNotificationName"
 let SEASON_KEY = "SeasonKey"
 let LAST_SEASON_KEY = "Last season key"
-

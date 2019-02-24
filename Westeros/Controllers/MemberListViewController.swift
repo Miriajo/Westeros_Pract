@@ -46,6 +46,9 @@ class MemberListViewController: UIViewController {
                                        selector: #selector(houseDidChange(notification:)),
                                        name: name,
                                        object: nil) // Object es quien manda la notific
+        
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -66,9 +69,12 @@ class MemberListViewController: UIViewController {
         // Actualizar mi modelo
         model = house.sortedMembers
         
-        // Asignar el botón de vuelta
-        let backButton = UIBarButtonItem(title: house.name, style: .plain, target: self, action: Selector(("none")))
-        navigationItem.backBarButtonItem = backButton
+        
+        // Asignar boton back
+        let backButton = UIBarButtonItem(title: "\(house.name)", style: .plain, target: self, action: Selector(("none")))
+
+        navigationController?.navigationItem.backBarButtonItem = backButton
+
         
         // Actualizar vista recargando el controlador
         tableView.reloadData()
@@ -107,11 +113,12 @@ extension MemberListViewController: UITableViewDataSource {
         // Crear el controlador de detalle de la Season
         let memberDetailViewController = MemberDetailViewController(model: member)
         
-        // Asignar boton back
-        let backButton = UIBarButtonItem(title: "\(member.house)", style: .plain, target: self, action: Selector(("none")))
-        
-        navigationController?.navigationItem.backBarButtonItem = backButton
-        
+//        // Asignar boton back
+//        let backButton = UIBarButtonItem(title: "\(member.house)", style: .plain, target: self, action: Selector(("none")))
+//
+//        navigationController?.navigationItem.backBarButtonItem = backButton
+    
+//
         // Mostarlo (push)
         navigationController?.pushViewController(memberDetailViewController, animated: true)
     }
