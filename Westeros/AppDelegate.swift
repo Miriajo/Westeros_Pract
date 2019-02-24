@@ -9,9 +9,10 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var westerosSplitViewController: WesterosSplitViewController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -20,16 +21,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         window?.makeKeyAndVisible()
         window?.backgroundColor = .white
 
-        /*
-         CREAR EL TAB BAR
-         */
-        // Crear el UITabBarController
         
-        window?.rootViewController = WesterosTabBarController()
+        let houses = Repository.local.houses
+        let seasons = Repository.local.seasons
         
+    
+        // chequear dispositivo iPad o iPhone
+      //  if UIDevice.current.userInterfaceIdiom == .pad {
+        
+        westerosSplitViewController =  WesterosSplitViewController(houses: houses, seasons: seasons)
+        
+        window?.rootViewController = westerosSplitViewController
+        
+      //  }else {
+            // Sino, mostramos un tabBar como master
+      //      window?.rootViewController = WesterosTabBarController(houses: houses, seasons: seasons)
+      //  }
 
         return true
     }
     
 }
-

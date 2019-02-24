@@ -48,7 +48,7 @@ class MemberListViewController: UIViewController {
                                        object: nil) // Object es quien manda la notific
         
         
-        
+        syncModelWithViewList()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -69,15 +69,20 @@ class MemberListViewController: UIViewController {
         // Actualizar mi modelo
         model = house.sortedMembers
         
-        
-        // Asignar boton back
-        let backButton = UIBarButtonItem(title: "\(house.name)", style: .plain, target: self, action: Selector(("none")))
-
-        navigationController?.navigationItem.backBarButtonItem = backButton
-
+        syncModelWithViewList()
+    }
+    
+    // MARK: Sync
+    func syncModelWithViewList() {
         
         // Actualizar vista recargando el controlador
         tableView.reloadData()
+        
+        // Asignar boton back
+        let backButton = UIBarButtonItem(title: "\(model[0].house.name)", style: .plain, target: self, action: Selector(("none")))
+        
+        navigationController?.navigationBar.backItem?.backBarButtonItem = backButton
+        
     }
 }
 
@@ -113,12 +118,8 @@ extension MemberListViewController: UITableViewDataSource {
         // Crear el controlador de detalle de la Season
         let memberDetailViewController = MemberDetailViewController(model: member)
         
-//        // Asignar boton back
-//        let backButton = UIBarButtonItem(title: "\(member.house)", style: .plain, target: self, action: Selector(("none")))
-//
-//        navigationController?.navigationItem.backBarButtonItem = backButton
-    
-//
+        memberDetailViewController.delegate = self
+  
         // Mostarlo (push)
         navigationController?.pushViewController(memberDetailViewController, animated: true)
     }
@@ -128,3 +129,13 @@ extension MemberListViewController: UITableViewDataSource {
 extension MemberListViewController: UITableViewDelegate {
     
 }
+
+extension MemberListViewController: MemberDetailViewControllerDelegate {
+    func memberDetailViewController(_ viewController: MemberDetailViewController, house: House) {
+        self.model = house.sortedMembers
+        syncModelWithViewList()
+        viewController.delegate = self
+    }
+    
+}
+

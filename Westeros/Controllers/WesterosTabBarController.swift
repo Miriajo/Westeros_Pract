@@ -11,22 +11,37 @@ import UIKit
 class WesterosTabBarController: UITabBarController {
 
     // MARK: Properties
-    var houseListViewController: HouseListViewController?
-    var lastHouseSelected: House?
-    var houseDetailViewController: HouseDetailViewController?
+    var houseListViewController: HouseListViewController
+    var lastHouseSelected: House
+    var houseDetailViewController: HouseDetailViewController
     var houseSplitViewController: UISplitViewController?
     var houseViewController: UIViewController?
     
-    var seasonListViewController: SeasonListViewController?
-    var lastSeasonSelected: Season?
-    var seasonDetailViewController: SeasonDetailViewController?
+    var seasonListViewController: SeasonListViewController
+    var lastSeasonSelected: Season
+    var seasonDetailViewController: SeasonDetailViewController
     var seasonSplitViewController: UISplitViewController?
-    
-    var episodeListViewController: EpisodeListViewController?
-    var episodeDetailViewController: EpisodeDetailViewController?
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        
+    init(houses: [House], seasons: [Season]) {
+        
+        // HOUSES INIT
+        // Creamos los controladores (el que irá en master, y el que irá en el detail)
+        houseListViewController = HouseListViewController(model: houses)
+        // Recuperar la última casa seleccionada (si hay alguna)
+        lastHouseSelected = houseListViewController.lastSelectedHouse()
+        // Crear el controlador Detail de House y Season
+        houseDetailViewController = HouseDetailViewController(model: lastHouseSelected)
+        
+        // SEASONS INIT
+        // Creamos los controladores (el que irá en master, y el que irá en el detail)
+        seasonListViewController = SeasonListViewController(model: seasons)
+        // Recuperar la última casa seleccionada (si hay alguna)
+        lastSeasonSelected = seasonListViewController.lastSelectedSeason()
+        // Crear el controlador Detail de House y Season
+        seasonDetailViewController = SeasonDetailViewController(model: lastSeasonSelected)
+        
         super.init(nibName: nil, bundle: nil)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -39,16 +54,14 @@ class WesterosTabBarController: UITabBarController {
         /*
          CREAR EL SPLIT VIEW PARA HOUSES
          */
-        let houses = Repository.local.houses
-        housesTabBarViewCreation(houses: houses)
+        housesTabBarViewCreation()
         
         //        window?.rootViewController = splitViewController
         
         /*
          CREAR EL SPLIT VIEW PARA SEASON
          */
-        let seasons = Repository.local.seasons
-        seasonsTabBarViewCreation(seasons: seasons)
+       seasonsTabBarViewCreation()
         
         
         /*
@@ -71,61 +84,49 @@ class WesterosTabBarController: UITabBarController {
         }
         else {
             // Crear título e icono del UITabBar para HOUSES
-            houseListViewController!.title = "Houses"
-            houseListViewController!.tabBarItem.image = UIImage(named: "Houses")
+            houseListViewController.title = "Houses"
+            houseListViewController.tabBarItem.image = UIImage(named: "Houses")
             // Crear título e icono del UITabBar para SEASONS
-            seasonListViewController?.title = "Seasons"
-            seasonListViewController?.tabBarItem.image = UIImage(named: "Seasons")
+            seasonListViewController.title = "Seasons"
+            seasonListViewController.tabBarItem.image = UIImage(named: "Seasons")
 
             
-            viewControllers = [houseListViewController?.wrappedInNavigation(), seasonListViewController?.wrappedInNavigation()] as? [UIViewController]
+            viewControllers = [houseListViewController.wrappedInNavigation(), seasonListViewController.wrappedInNavigation()]
         }
         
     }
     
-    private func housesTabBarViewCreation(houses: [House]) {
+    private func housesTabBarViewCreation() {
         
-        // Creamos los controladores (el que irá en master, y el que irá en el detail)
-        houseListViewController = HouseListViewController(model: houses)
-        // Recuperar la última casa seleccionada (si hay alguna)
-        lastHouseSelected = houseListViewController?.lastSelectedHouse()
-        // Crear el controlador Detail de House y Season
-        houseDetailViewController = HouseDetailViewController(model: lastHouseSelected!)
         
         // Asigar delegados
         // Un objeto SOLO PUEDE TENER UN DELEGADO
         // Un objeto, puede ser delegado de muchos otros objetos
-        houseListViewController?.delegate = houseDetailViewController
+        houseListViewController.delegate = houseDetailViewController
     
         // Creamos el split view controller y asignamos los controladores
         houseSplitViewController = UISplitViewController()
         
         houseSplitViewController?.viewControllers = [
-                houseListViewController?.wrappedInNavigation(),
-                houseDetailViewController?.wrappedInNavigation()
-                ] as! [UIViewController]
+                houseListViewController.wrappedInNavigation(),
+                houseDetailViewController.wrappedInNavigation()
+                ]
         
     }
     
-    private func seasonsTabBarViewCreation(seasons: [Season]) {
+    private func seasonsTabBarViewCreation() {
         
-        // Creamos los controladores (el que irá en master, y el que irá en el detail)
-        seasonListViewController = SeasonListViewController(model: seasons)
-        // Recuperar la última casa seleccionada (si hay alguna)
-        lastSeasonSelected = seasonListViewController?.lastSelectedSeason()
-        // Crear el controlador Detail de House y Season
-        seasonDetailViewController = SeasonDetailViewController(model: lastSeasonSelected!)
         
         // Asignar el delegado
-        seasonListViewController?.delegate = seasonDetailViewController
+        seasonListViewController.delegate = seasonDetailViewController
         
         
         // Creamos el split view controller y asignamos los controladores
         seasonSplitViewController = UISplitViewController()
         seasonSplitViewController?.viewControllers = [
-            seasonListViewController?.wrappedInNavigation(),
-            seasonDetailViewController?.wrappedInNavigation()
-            ] as! [UIViewController]
+            seasonListViewController.wrappedInNavigation(),
+            seasonDetailViewController.wrappedInNavigation()
+            ]
         
     }
 }

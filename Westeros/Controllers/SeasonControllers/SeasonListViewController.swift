@@ -9,7 +9,7 @@
 import UIKit
 
 // Definir un delegado propio
-protocol SeasonListViewControllerDelegate {
+protocol SeasonListViewControllerDelegate: AnyObject {
     func seasonListViewController(_ viewController: SeasonListViewController, didSelectSeason: Season)
 }
 
@@ -71,16 +71,8 @@ class SeasonListViewController: UITableViewController {
         // Averiguar la Season seleccionada
         let season = model[indexPath.row]
         
-        // Chequear dispositivo
-        if UIApplication.shared.statusBarOrientation.isLandscape && UIDevice.current.userInterfaceIdiom != .phone {
-            // Avisar al delegado
-            delegate?.seasonListViewController(self, didSelectSeason: season)
-        } else {
-            let seasonDetailViewController = SeasonDetailViewController(model: season)
-            navigationController?.pushViewController(seasonDetailViewController, animated: true)
-        }
-                
-        
+        delegate?.seasonListViewController(self, didSelectSeason: season)
+       
         // Emitir la misma info por notificaciones
         let notificationCenter = NotificationCenter.default
         // Creamos la notificación
@@ -121,5 +113,13 @@ extension SeasonListViewController {
     
     func season(at index: Int) -> Season {
         return model[index]
+    }
+}
+
+
+// Crear extensión del delegado del Split para NO mostrar el Detail en el Master
+extension SeasonListViewController: UISplitViewControllerDelegate {
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
     }
 }

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MemberDetailViewControllerDelegate {
+    func memberDetailViewController(_ viewController: MemberDetailViewController, house: House)
+}
+
 class MemberDetailViewController: UIViewController {
 
     @IBOutlet weak var memberNameLabel: UILabel!
@@ -15,34 +19,24 @@ class MemberDetailViewController: UIViewController {
     @IBOutlet weak var memberImage: UIImageView!
     
     // MARK: Properties
-    let model: Person
+    var model: Person
+    var delegate: MemberDetailViewControllerDelegate?
     
     // MARK: Inizialization
     init(model: Person) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
+
         title = self.model.house.name + " House" //self.model.fullName
+
+        // Asignar el delegado
+        self.delegate = MemberListViewController(model: model.house.sortedMembers)
+
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        navigationItem.backBarButtonItem?.title = "Members"
-        
-        syncModelWithView()
-    }
-
-    // MARK: Sync
-    func syncModelWithView() {
-        memberNameLabel.text = model.fullName
-        memberAliasLabel.text = model.alias
-        memberImage.image = model.image
-    }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -56,6 +50,8 @@ class MemberDetailViewController: UIViewController {
                                        name: name,
                                        object: nil) // Object es quien manda la notific
         
+        syncModelWithView()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -66,25 +62,37 @@ class MemberDetailViewController: UIViewController {
     }
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        navigationItem.backBarButtonItem?.title = "Members"
+
+    }
+
+    // MARK: Sync
+    func syncModelWithView() {
+        memberNameLabel.text = model.fullName
+        memberAliasLabel.text = model.alias
+        memberImage.image = model.image
+        
+        let backButton = UIBarButtonItem(title: model.house.name, style: .plain, target: self, action: Selector(("none")))
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    
+    
     // MARK: Notification
     @objc func houseDidChange(notification: Notification) {
-//        // Sacar el userInfo de la noti, y la casa del userInfo
-//        guard let info = notification.userInfo,
-//            let house = info[HOUSE_KEY] as? House else {
-//                return
-//        }
-//        
-//        // Actualizar mi modelo
-//        model = house.sortedMembers
-//        
-//        // Asignar el botón de vuelta
-//        let backButton = UIBarButtonItem(title: house.name, style: .plain, target: self, action: Selector(("none")))
-//        navigationItem.backBarButtonItem = backButton
-//        
-//        // Actualizar vista recargando el controlador
-//        tableView.reloadData()
+        // Sacar el userInfo de la noti, y la casa del userInfo
+        guard let info = notification.userInfo,
+            let house = info[HOUSE_KEY] as? House else {
+                return
+        }
+
+        // Avisar al delegado
+        delegate?.memberDetailViewController(self, house: house)
         
         navigationController?.popViewController(animated: true)
     }
     
 }
+

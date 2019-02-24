@@ -64,7 +64,7 @@ class EpisodeListViewController: UITableViewController {
         model = season.sortedEpisodes
         
         syncModelWithViewList()
-   
+        
     }
     
     // MARK: Sync
@@ -122,6 +122,14 @@ class EpisodeListViewController: UITableViewController {
         // Crear el controlador de detalle de la Season
         let episodeDetailViewController = EpisodeDetailViewController(model: episode)
         
+        
+        episodeDetailViewController.delegate = self
+//        
+//        // Asignar el botón de vuelta
+//        let backButton = UIBarButtonItem(title: model[0].season!.description, style: .plain, target: self, action: Selector(("none")))
+//        episodeDetailViewController.navigationController?.navigationBar.backItem?.backBarButtonItem = backButton
+//        
+//        
         // Mostarlo (push)
         navigationController?.pushViewController(episodeDetailViewController, animated: true)
     }
@@ -132,6 +140,7 @@ extension EpisodeListViewController: EpisodeDetailViewControllerDelegate {
     func episodeDetailViewController(_ viewController: EpisodeDetailViewController, season: Season) {
         self.model = season.sortedEpisodes
         syncModelWithViewList()
+        viewController.delegate = self
         
     }
     

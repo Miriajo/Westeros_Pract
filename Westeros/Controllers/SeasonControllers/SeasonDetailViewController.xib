@@ -62,7 +62,7 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fOC-sy-FKp">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fOC-sy-FKp">
                     <rect key="frame" x="0.0" y="155" width="375" height="492"/>
                 </imageView>
             </subviews>
@@ -72,9 +72,11 @@
                 <constraint firstItem="Qrb-Ua-sNu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4ao-9V-jCL"/>
                 <constraint firstItem="fOC-sy-FKp" firstAttribute="top" secondItem="Qrb-Ua-sNu" secondAttribute="bottomMargin" constant="20" id="9Xd-Ue-8hx"/>
                 <constraint firstItem="Izc-Cj-eVK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FYE-H0-DxV"/>
+                <constraint firstItem="fOC-sy-FKp" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="KEa-T2-eyu"/>
                 <constraint firstItem="fOC-sy-FKp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LTc-Hg-hpf"/>
                 <constraint firstItem="Mgn-lk-PW3" firstAttribute="top" secondItem="Izc-Cj-eVK" secondAttribute="bottomMargin" constant="18" id="Mi1-6I-5aG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="fOC-sy-FKp" secondAttribute="bottom" constant="20" id="Qmk-lC-NmK"/>
+                <constraint firstItem="fOC-sy-FKp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Va6-6X-ONd"/>
                 <constraint firstItem="Qrb-Ua-sNu" firstAttribute="top" secondItem="Mgn-lk-PW3" secondAttribute="bottomMargin" constant="18" id="ax2-1q-rjN"/>
                 <constraint firstItem="Mgn-lk-PW3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="q8X-0O-nQG"/>
             </constraints>

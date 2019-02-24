@@ -16,7 +16,6 @@ protocol HouseFactory {
     typealias HouseFilter = (House) -> Bool
     var houses: [House] { get } // sólo get porque será de sólo lectura
     func house(named: String) -> House?
-    func house(named: String) -> String
     func houses(filteredBy filter: HouseFilter) -> [House]
     
     // MARK: Inizialization - Season
@@ -29,8 +28,7 @@ protocol HouseFactory {
 }
 
 final class LocalFactory: HouseFactory {
-
-    enum Named: String {
+    enum HouseName: String {
         case stark = "Stark"
         case lannister = "Lannister"
         case targaryen = "Targaryen"
@@ -47,9 +45,9 @@ final class LocalFactory: HouseFactory {
         let targaryenURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Targaryen")!
         
         
-        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Se acerca el invierno", wikiURL: starkURL)
-        let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Oye mi rugido", wikiURL: lannisterURL)
-        let targaryenHouse = House(name: "Targaryen", sigil: targaryenSigil, words: "Fuego y Sangre", wikiURL: targaryenURL)
+        let starkHouse = House(name: HouseName.stark.rawValue, sigil: starkSigil, words: "Se acerca el invierno", wikiURL: starkURL)
+        let lannisterHouse = House(name: HouseName.lannister.rawValue, sigil: lannisterSigil, words: "Oye mi rugido", wikiURL: lannisterURL)
+        let targaryenHouse = House(name: HouseName.targaryen.rawValue, sigil: targaryenSigil, words: "Fuego y Sangre", wikiURL: targaryenURL)
         
         // Añadir algunos personajes
         let robb = Person(name: "Robb", alias: "El Joven Lobo", house: starkHouse, image: UIImage(named:"robb")!)
@@ -70,21 +68,6 @@ final class LocalFactory: HouseFactory {
         //let house = houses.filter{ $0.name == name }.first
         let house = houses.first{ $0.name.uppercased() == name.uppercased() } // Con uppercased() "normalizamos los valores"
         return house
-    }
-    
-    func house(named name: String) -> String {
-        
-        switch name {
-            case Named.stark.rawValue:
-                return Named.stark.rawValue
-            case Named.lannister.rawValue:
-                return Named.lannister.rawValue
-            case Named.targaryen.rawValue:
-                return Named.lannister.rawValue
-          
-        default:
-            return "nothing"
-        }
     }
     
     func houses(filteredBy theFilter: (House) -> Bool) -> [House] {

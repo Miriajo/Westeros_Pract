@@ -66,6 +66,13 @@ class EpisodeDetailViewController: UIViewController {
     }
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+      //  navigationItem.backBarButtonItem?.title = "Episodes"
+        
+    }
+    
     // MARK: Sync
     func syncModelWithView() {
         episodeTitleLabel.text = model.title
@@ -77,6 +84,10 @@ class EpisodeDetailViewController: UIViewController {
         
         episodeSummaryText.text = model.summary
         
+        // Asignar el botón de vuelta
+        let backButton = UIBarButtonItem(title: model.season?.description, style: .plain, target: self, action: Selector(("none")))
+        navigationController?.navigationBar.backItem?.backBarButtonItem = backButton
+        
     }
  
     // MARK: Notification
@@ -86,7 +97,7 @@ class EpisodeDetailViewController: UIViewController {
             let season = info[SEASON_KEY] as? Season else {
                 return
         }
-       
+
         // Avisar al delegado
         delegate?.episodeDetailViewController(self, season: season)
         

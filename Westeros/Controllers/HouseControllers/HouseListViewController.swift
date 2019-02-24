@@ -9,7 +9,7 @@
 import UIKit
 
 // Definir nuestro propio delegado
-protocol HouseListViewControllerDelegate: class {
+protocol HouseListViewControllerDelegate: AnyObject {
     // Should
     // Will
     // Did
@@ -72,27 +72,8 @@ class HouseListViewController: UITableViewController {
         
         // Averiguar la casa que se ha pulsado
         let house = model[indexPath.row]
-        
-        /*
-         TODO: Comprobar si es un iPad y hacer el delegate,
-                Si no hacer un push.
-         
-         ---
-         let houseDetailViewController = HouseDetailViewController(model: house)
-         navigationController?.pushViewController(houseDetailViewController, animated: true)
-         ---
-         
-         */
-        
-        if UIApplication.shared.statusBarOrientation.isLandscape && UIDevice.current.userInterfaceIdiom != .phone {
-            // Avisar al delegado
-            // Quien quiera, que se conforme al HouseListViewControllerDelegate para hacer lo que tenga que hacer
-            delegate?.houseListViewController(self, didSelectHouse: house)
-        } else {
-            let houseDetailViewController = HouseDetailViewController(model: house)
-            navigationController?.pushViewController(houseDetailViewController, animated: true)
-        }
-        
+       
+        delegate?.houseListViewController(self, didSelectHouse: house)
         
         // Emitir la misma info por notificaciones
         let notificationCenter = NotificationCenter.default
@@ -133,5 +114,12 @@ extension HouseListViewController {
     
     func house(at index: Int) -> House {
         return model[index]
+    }
+}
+
+// Crear extensión del delegado del Split para NO mostrar el Detail en el Master
+extension HouseListViewController: UISplitViewControllerDelegate {
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
     }
 }
